@@ -25,4 +25,6 @@ plt.legend()
 
 plt.xlabel("t")
 plt.ylabel(r'$\vec{u}^{(1)}(t)$')
+plt.savefig('Part_c_solution for m_1 and n_1.png')
 plt.show()
+
