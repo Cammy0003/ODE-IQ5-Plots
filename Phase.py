@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
 # Setting the grid for visualization
 u1, u3 = np.meshgrid(np.linspace(-5, 5, 20), np.linspace(-5, 5, 20))
 u2, u4 = np.meshgrid(np.linspace(-5, 5, 20), np.linspace(-5, 5, 20))
@@ -37,7 +39,7 @@ axs[1].set_ylabel('$v_2$')
 axs[1].axis('equal')
 
 plt.tight_layout()
-plt.savefig('Part c Phase Portraits with solution curves')
+plt.savefig('Part c Phase Portraits')
 plt.show()
 
 
