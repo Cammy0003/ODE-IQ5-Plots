@@ -1,38 +1,28 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+m = np.sqrt(2/3)
+n = np.sqrt(3/2)
+
 
 def solutions_u1(t, co):
-    sol = co[0] * np.cos(2*t) + co[1] * np.sin(2*t) + co[2] * np.cos(np.sqrt(2/3) * t) + co[3] * np.sin(np.sqrt(2/3) * t)
+    sol = co[0] * -3 * np.sin(2*t) + co[1] * 3 * np.cos(2*t) + co[2] * n * np.sin(m*t) + co[3] * -n * np.cos(m*t)
     return sol
 
 
 def solutions_v1(t, co):
-    sol = co[0] * (-2)*np.sin(2*t) + co[1] * 2*np.cos(2*t) - co[2] * np.sqrt(2/3) * np.sin(np.sqrt(2/3) * t) + co[3] * np.sqrt(2/3) * np.cos(np.sqrt(2/3) * t)
+    sol = co[0] * -6 * np.sin(2*t) + co[1] * 6 * np.sin(2*t) + co[2] * np.cos(m*t) + co[3] * np.sin(m*t)
     return sol
 
 
-co = [1, 1, 1, 1]  # c = 1
+co = [3/10, -1/5, 4/5, -(8 * np.sqrt(6))/15]  # u(0)
 t_vals = np.linspace(-5, 5, 500)
 x_vals = solutions_u1(t_vals, co)
 y_vals = solutions_v1(t_vals, co)
-plt.plot(x_vals, y_vals, label=r'Solution curve ($C_n = 1$)')
+plt.plot(x_vals, y_vals, label=r'Solution curve ($\vec{u(0)}$)')
 
-co = [1, 2, 3, 4]  # c = 1, 2, 3, 4
-t_vals = np.linspace(-5, 5, 500)
-x_vals = solutions_u1(t_vals, co)
-y_vals = solutions_v1(t_vals, co)
-plt.plot(x_vals, y_vals, label=r'Solution curve ($C_n = 1$)')
 
-co = [3, 3, 1, 2]  # c = 3, 3, 1, 2
-t_vals = np.linspace(-5, 5, 500)
-x_vals = solutions_u1(t_vals, co)
-y_vals = solutions_v1(t_vals, co)
-plt.plot(x_vals, y_vals, label=r'Solution curve ($C_n = 1$)')
-
-plt.title(r'Solutions Plot in $u_1, u_3$ plane')
-
-plt.plot(x_vals, y_vals, label=r'Solution curve ($C_n = 1$)')
+plt.title(r'Solutions Plot with ICs \vec{u(0)}')
 
 
 plt.legend()
